@@ -54,22 +54,17 @@ public class Date {
 	if (_day == n.getDay()){isSameDay=true;}
 		return isSameDay;
 	}
-	public boolean isSameDate(Date n){
-	boolean isSameDate=false;
+	public boolean isSame(Date n){
+	boolean isSame=false;
 	System.out.println("¿Es la misma fecha?");
-	if(_day == n.getDay() && _month == n.getMonth() && _year == n.getYear() ){isSameDate=true;}
-	return isSameDate;
+	if(_day == n.getDay() && _month == n.getMonth() && _year == n.getYear() ){isSame=true;}
+	return isSame;
 	}
 
 
 
 
-	/*int dias(int dia){
-	if(_day > 31){System.out.println("Ese dia no existe");
-	dia =Teclado.readInteger();}
-	_day = dia;
-	return _day;
-	}*/
+	
 	
 
 
@@ -77,37 +72,31 @@ public class Date {
 
 
 
+	public StringBuffer Mes() {
+		StringBuffer nombre = new StringBuffer();
+		nombre.append(" ");
+		if(_month == 1){nombre.append("Enero");}
+		if(_month == 2){nombre.append("Febrero");}
+		if(_month == 3){nombre.append("Marzo");}
+		if(_month == 4){nombre.append("Abril");}
+		if(_month == 5){nombre.append("Mayo");}
+		if(_month == 6){nombre.append("Junio");}
+		if(_month == 7){nombre.append("Julio");}
+		if(_month == 8){nombre.append("Agosto");}
+		if(_month == 9){nombre.append("Septiembre");}
+		if(_month == 10){nombre.append("Octubre");}
+		if(_month == 11){nombre.append("Noviembre");}
+		if(_month == 12){nombre.append("Diciembre");}
+ 		return nombre;
 
 
 
+	}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	public 	String toString() {
-		StringBuffer salida = new StringBuffer();
-		int dia,mes,ano;
-		while (_month > 12){
-			System.out.println("Ese mes no existe");
-			mes=Teclado.readInteger();
-			_month = mes;
-			}
-		if(_month == 2){
+	public int Month(){
+	int dia;
+	if(_month == 2){
 		while(_day > 28){
 			System.out.println("Ese dia no existe");
 			dia =Teclado.readInteger();
@@ -127,9 +116,54 @@ public class Date {
 			_day = dia;
 			}
 		}
+
+		return _day;
+}
+
+	public StringBuffer Season(){
+		StringBuffer season = new StringBuffer();
+		season.append("Estacion: ");
+		if(_month >= 3 && _month < 6){ season.append("Primavera");}
+		if(_month >= 6 && _month < 9){ season.append("Verano");}
+		if(_month >= 9 && _month < 12){ season.append("Otoño");}
+		if(_month == 12 || _month < 3){ season.append("Invierno");}
+		return season;
+
+		
+	}
+
+
+
+	public int end(){
+		int fin = 12-_month;
+		return fin;
+		}
+
+
+
+
+
+
+
+
+
+
+	public 	String toString() {
+		StringBuffer salida = new StringBuffer();
+		int dia,mes,ano;
+		while (_month > 12){
+			System.out.println("Ese mes no existe");
+			mes=Teclado.readInteger();
+			_month = mes;
+			}
+		_day = Month();
+		
 		salida.append(_day+"");
 		salida.append(" "+_month);
 		salida.append(" "+_year);
+		salida.append(" "+Mes());
+		salida.append(" "+Season());
+		salida.append(" "+"quedan "+end()+" "+"meses");
 		return salida.toString();
 		
 		}
