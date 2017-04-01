@@ -286,9 +286,9 @@ public class Date {
 		salida.append(_day+"");
 		salida.append(" "+_month);
 		salida.append(" "+_year);
-		salida.append(" "+Mes());
-		salida.append(" "+Season());
-		salida.append(" "+"quedan "+end()+" "+"meses");
+		//salida.append(" "+Mes());
+		//salida.append(" "+Season());
+		//salida.append(" "+"quedan "+end()+" "+"meses");
 		//salida.append(" "+alldates());
 		return salida.toString();
 		
