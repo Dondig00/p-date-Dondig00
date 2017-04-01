@@ -14,11 +14,17 @@ public static void main (String[] args){
 	System.out.println(fecha2);
 
 
-	System.out.println(fecha.isSameMonth(fecha2));
-	System.out.println(fecha.isSameDay(fecha2));
-	System.out.println(fecha.isSameYear(fecha2));
-	System.out.println(fecha.isSame(fecha2));
-
+	//System.out.println(fecha.isSameMonth(fecha2));
+	//System.out.println(fecha.isSameDay(fecha2));
+	//System.out.println(fecha.isSameYear(fecha2));
+	//System.out.println(fecha.isSame(fecha2));
+	//System.out.println(fecha.alldates());
+	//System.out.println(fecha.Season());
+	//System.out.println(fecha.Meses());
+	//System.out.println("Quedan para acabar el año: "+ fecha.Resto()+ " dias");
+	//System.out.println(fecha.random());
+	//System.out.println(fecha2.Week());
+	//System.out.println(fecha.Resto());
 
 }
 
